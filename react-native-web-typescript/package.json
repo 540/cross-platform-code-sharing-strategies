@@ -1,0 +1,67 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "web": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest -u --forceExit --coverage --detectOpenHandles",
+    "watch": "jest -u --forceExit --detectOpenHandles --watchAll",
+    "lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --fix",
+    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.9.2",
+    "@react-navigation/stack": "^5.14.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-native": "0.63.4",
+    "react-native-gesture-handler": "^1.10.1",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-screens": "^2.17.1",
+    "react-native-web": "^0.15.0",
+    "react-scripts": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/runtime": "^7.12.18",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^26.0.20",
+    "@types/react": "^17.0.2",
+    "@types/react-native": "^0.63.50",
+    "@types/react-test-renderer": "^17.0.1",
+    "metro-react-native-babel-preset": "^0.65.1",
+    "react-test-renderer": "16.14.0",
+    "typescript": "^4.0.5"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp|ttf|otf|m4v|mov|mp4|mpeg|mpg|webm|aac|aiff|caf|m4a|mp3|wav|html|pdf|obj)$": "<rootDir>/src/mocks/Files/index.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@react-native-community|@react-navigation)"
+    ],
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/src/mocks/Setup/index.ts"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
