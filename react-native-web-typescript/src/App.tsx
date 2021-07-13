@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Details, Home } from './ui/screens'
+import { Details, Home } from 'ui/screens'
 
 export type StackParams = {
   Home: undefined

@@ -2,9 +2,8 @@ import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import React, { ReactElement } from 'react'
 import { Button, Text } from 'react-native'
-import { StackParams } from "../../App";
-import { Container } from "../components";
-
+import { StackParams } from 'App'
+import { Container } from 'ui/components'
 
 type NavigationProps = StackNavigationProp<StackParams, 'Details'>
 type RouteProps = RouteProp<StackParams, 'Details'>

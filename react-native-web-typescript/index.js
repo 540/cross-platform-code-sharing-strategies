@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
-import { App } from './src';
+import 'react-native-gesture-handler'
+import { App } from './src'
 
-export default App;
+export default App
