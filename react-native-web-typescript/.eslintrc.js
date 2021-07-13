@@ -1,12 +1,13 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'react', 'prettier'],
   extends: [
     '@react-native-community',
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'prettier',
   ],
-  env: {jest: true},
   ignorePatterns: [
     'node_modules/',
     'coverage/',
@@ -14,4 +15,8 @@ module.exports = {
     'ios/',
     'src/mocks/Setup',
   ],
+  rules: {
+    'prettier/prettier': 'warn',
+    'no-unused-vars': 'off', //Causes duplicates with typescript-eslint/no-unused-vars
+  },
 };
