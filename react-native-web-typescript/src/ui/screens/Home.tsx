@@ -12,7 +12,7 @@ export function Home(): ReactElement {
   return (
     <Container>
       <Text>Platform: {Platform.OS}</Text>
-      <Button onPress={() => navigate('Details', { data: '🤪' })}>Details</Button>
+      <Button title={'Details'} onPress={() => navigate('Details', { data: '🤪' })}/>
     </Container>
   )
 }

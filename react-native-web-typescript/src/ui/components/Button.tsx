@@ -2,14 +2,15 @@ import React from 'react'
 import { Pressable, StyleSheet, Text } from 'react-native'
 
 interface Props {
-  children: string
+  title: string
   onPress: () => void
   disabled?: boolean
+  testID?: string
 }
 
-export const Button = ({ children, onPress, disabled }: Props) => (
-  <Pressable style={[styles.button, disabled && styles.disabled]} onPress={onPress} disabled={disabled}>
-    <Text style={[styles.text, disabled && styles.disabledText]}>{children}</Text>
+export const Button = ({ title, onPress, disabled, testID }: Props) => (
+  <Pressable style={[styles.button, disabled && styles.disabled]} onPress={onPress} disabled={disabled} testID={testID}>
+    <Text style={[styles.text, disabled && styles.disabledText]}>{title}</Text>
   </Pressable>
 )
 
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 10,
     padding: 10,
+    marginVertical: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'lightblue'
