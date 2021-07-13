@@ -1,10 +1,5 @@
-import React, {ReactElement} from 'react';
 import {AppRegistry, Platform} from 'react-native';
-import {Navigation} from './navigation';
-
-export function App(): ReactElement {
-  return <Navigation />;
-}
+import {App} from './App';
 
 AppRegistry.registerComponent('example', () => App);
 if (Platform.OS === 'web') {
