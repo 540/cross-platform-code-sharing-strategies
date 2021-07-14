@@ -6,10 +6,11 @@ import {StackParams} from 'App'
 import {Button, Container} from "ui/components";
 import {ItemService} from "core/services/ItemService";
 import {Item} from "core/domain/model/Item";
+import {MyComponent} from 'ui/components/Component';
 
 type NavigationProps = StackNavigationProp<StackParams, 'Home'>
 
-export function Home(): ReactElement {
+export const Home =(): ReactElement  =>{
     const {navigate} = useNavigation<NavigationProps>()
     const [items, setItems] = useState<Item[]>([])
 
@@ -24,6 +25,7 @@ export function Home(): ReactElement {
                 {items.map((item: Item, index) => (<Text key={index.toString()}>{item.data}</Text>))}
             </>
             <Button title={'Details'} onPress={() => navigate('Details', {data: '🤪'})}/>
+            <MyComponent/>
         </Container>
     )
 }
