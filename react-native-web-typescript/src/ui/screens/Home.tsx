@@ -1,31 +1,24 @@
+// @ts-ignore
 import React, {ReactElement, useEffect, useState} from 'react'
-import {Platform, Text} from 'react-native'
-import {useNavigation} from '@react-navigation/native'
-import {StackNavigationProp} from '@react-navigation/stack'
-import {StackParams} from 'App'
-import {Button, Container} from "ui/components";
-import {ItemService} from "core/services/ItemService";
-import {Item} from "core/domain/model/Item";
-import {MyComponent} from 'ui/components/Component';
+import {PokemonService} from 'core/services/PokemonService';
+import {Pokemon} from 'core/domain/model/Pokemon';
+import {ActivityIndicator} from 'react-native';
+import {PokemonList} from '../components';
 
-type NavigationProps = StackNavigationProp<StackParams, 'Home'>
-
-export const Home =(): ReactElement  =>{
-    const {navigate} = useNavigation<NavigationProps>()
-    const [items, setItems] = useState<Item[]>([])
+export const Home = (): ReactElement => {
+    const [pokemons, setPokemons] = useState<Pokemon[]>([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        setItems(ItemService.get())
-    }, [])
-
+        PokemonService.getList().then(fetchedPokemons => {
+            setPokemons(fetchedPokemons)
+            setLoading(false)
+        })
+    })
     return (
-        <Container>
-            <Text>Platform: {Platform.OS}</Text>
-            <>
-                {items.map((item: Item, index) => (<Text key={index.toString()}>{item.data}</Text>))}
-            </>
-            <Button title={'Details'} onPress={() => navigate('Details', {data: '🤪'})}/>
-            <MyComponent/>
-        </Container>
+        <>
+            <PokemonList pokemons={pokemons}/>
+            {loading && <ActivityIndicator animating={loading} size='large'/>}
+        </>
     )
 }
