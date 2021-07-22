@@ -1,11 +1,11 @@
 import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
-import {Home} from 'ui/screens'
+import {PokemonDetail, PokemonList} from 'ui/screens'
 
 export type StackParams = {
-    Home: undefined
-    Details: { data: string } | undefined
+    PokemonList: undefined
+    PokemonDetail: { pokemonId: number }
 }
 
 const Stack = createStackNavigator<StackParams>()
@@ -14,7 +14,8 @@ export const App = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home}/>
+                <Stack.Screen name="PokemonList" component={PokemonList}/>
+                <Stack.Screen name="PokemonDetail" component={PokemonDetail}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     flexContainer: {
         padding: 10,
-        backgroundColor: 'grey',
+        backgroundColor: 'lightgrey',
         borderRadius: 30,
         flex: 1,
         alignItems: 'center'
