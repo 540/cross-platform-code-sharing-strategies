@@ -14,7 +14,7 @@ export const PokemonDetail = () => {
 
     useEffect(() => {
         PokemonService.getById(pokemonId).then(setPokemon)
-    }, [])
+    }, [pokemonId])
 
     if (!pokemon) {
         return <ActivityIndicator animating size='large'/>

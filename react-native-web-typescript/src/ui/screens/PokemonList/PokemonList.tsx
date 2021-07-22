@@ -16,7 +16,7 @@ export const PokemonList = () => {
 
     useEffect(() => {
         PokemonService.getList().then(setPokemons)
-    })
+    },[setPokemons])
 
     if (pokemons.length === 0) {
         return <ActivityIndicator animating size='large'/>
