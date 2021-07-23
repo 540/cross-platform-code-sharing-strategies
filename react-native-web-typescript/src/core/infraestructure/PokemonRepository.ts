@@ -3,7 +3,7 @@ import {PokemonSerializer} from './PokemonSerializer';
 
 export const PokemonRepository = {
     getList: async (): Promise<Pokemon[]> => {
-        let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
+        let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=200')
         let json = await response.json();
         return PokemonSerializer.parsePokemonList(json.results)
     },

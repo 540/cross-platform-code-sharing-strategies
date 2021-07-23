@@ -14,8 +14,8 @@ export const App = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="PokemonList" component={PokemonList}/>
-                <Stack.Screen name="PokemonDetail" component={PokemonDetail}/>
+                <Stack.Screen name="PokemonList" component={PokemonList} options={{headerShown: false}}/>
+                <Stack.Screen name="PokemonDetail" component={PokemonDetail} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
