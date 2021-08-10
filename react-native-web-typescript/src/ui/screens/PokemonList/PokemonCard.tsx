@@ -1,22 +1,23 @@
 import React from 'react'
-import { Image, StyleProp, StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native'
+import {Image, StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native'
 import { Pokemon } from 'core/domain/model/Pokemon'
+import { Pressable } from 'react-native-web-hover'
 
-interface Props {
+interface Props{
   pokemon: Pokemon
   onPress: () => void
   style: StyleProp<ViewStyle>
 }
 
 export const PokemonCard = ({ pokemon, onPress, style }: Props) => (
-  <View style={[styles.container, style]}>
+  <Pressable
+    onPress={onPress}
+    style={({ hovered }) => [styles.container, style, hovered && { transform: [{ scale: 1.1 }] }]}>
     <View style={styles.flexContainer}>
-      <TouchableOpacity onPress={onPress}>
-        <Image style={styles.image} source={{ uri: pokemon.picture }} />
-      </TouchableOpacity>
+      <Image style={styles.image} source={{ uri: pokemon.picture }} />
       <Text>{`${pokemon.id} - ${pokemon.name}`}</Text>
     </View>
-  </View>
+  </Pressable>
 )
 
 const styles = StyleSheet.create({

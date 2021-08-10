@@ -1,0 +1,41 @@
+diff --git a/node_modules/react-native-web-hover/lib/typescript/src/index.d.ts b/node_modules/react-native-web-hover/lib/typescript/src/index.d.ts
+index e011736..6ae0461 100644
+--- a/node_modules/react-native-web-hover/lib/typescript/src/index.d.ts
++++ b/node_modules/react-native-web-hover/lib/typescript/src/index.d.ts
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import type { ViewProps, StyleProp, ViewStyle, PressableStateCallbackType, FlatListProps, VirtualizedListProps, ScrollViewProps } from 'react-native';
++import type { ViewProps, StyleProp, ViewStyle, PressableStateCallbackType, FlatListProps, VirtualizedListProps, ScrollViewProps, PressableProps as NativePressableProps } from 'react-native';
+ interface PressableStateCallbackTypeWeb extends PressableStateCallbackType {
+     focused?: boolean;
+     hovered?: boolean;
+@@ -11,7 +11,7 @@ interface HoverableProps extends ViewProps {
+         hovered: boolean;
+     }) => React.ReactNode);
+ }
+-interface PressableProps extends Omit<ViewProps, 'style'> {
++interface PressableProps extends Omit<NativePressableProps, 'style'> {
+     children: ChildrenType;
+     style?: StylesType;
+ }
+diff --git a/node_modules/react-native-web-hover/src/index.tsx b/node_modules/react-native-web-hover/src/index.tsx
+index a2a1c4d..143470a 100644
+--- a/node_modules/react-native-web-hover/src/index.tsx
++++ b/node_modules/react-native-web-hover/src/index.tsx
+@@ -7,6 +7,7 @@ import type {
+   FlatListProps,
+   VirtualizedListProps,
+   ScrollViewProps,
++  PressableProps as NativePressableProps
+ } from 'react-native';
+ 
+ import {
+@@ -44,7 +45,7 @@ interface HoverableProps extends ViewProps {
+     | ((state: { hovered: boolean }) => React.ReactNode);
+ }
+ 
+-interface PressableProps extends Omit<ViewProps, 'style'> {
++interface PressableProps extends Omit<NativePressableProps, 'style'> {
+   children: ChildrenType;
+   style?: StylesType;
+ }
