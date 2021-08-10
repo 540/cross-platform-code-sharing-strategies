@@ -1,11 +1,12 @@
 // @ts-ignore
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, Image, Pressable, SafeAreaView, StyleSheet, Text} from "react-native";
+import {ActivityIndicator, Image, SafeAreaView, StyleSheet, Text} from "react-native";
 import {FullPokemon} from 'core/domain/model/Pokemon';
 import {PokemonService} from 'core/services/PokemonService';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {StackParams} from '../../App';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {Icon} from '../components/Icon';
 
 type RouteProps = RouteProp<StackParams, 'PokemonDetail'>
 type NavigationProps = StackNavigationProp<StackParams, 'PokemonDetail'>
@@ -26,7 +27,7 @@ export const PokemonDetail = () => {
 
     return (
         <SafeAreaView>
-            <Pressable onPress={navigation.goBack}><Text>BACK</Text></Pressable>
+            <Icon name={'less'} onPress={navigation.goBack}/>
             <Text style={styles.title}>{pokemon.name}</Text>
             <Image
                 style={styles.image}
