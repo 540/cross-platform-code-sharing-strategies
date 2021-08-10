@@ -18,6 +18,6 @@ export const styles = StyleSheet.create({
   center: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: Platform.OS == 'web' ? '100vh' : '100%'
+    height: Platform.OS === 'web' ? '100vh' : '100%'
   }
 })
