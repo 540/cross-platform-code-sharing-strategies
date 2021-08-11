@@ -1,19 +1,20 @@
 import React from 'react'
-import { Image, Platform, StyleSheet, View } from 'react-native'
+import {Dimensions, StyleSheet, View, Image, StyleProp, ViewStyle, Platform} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { FullPokemon } from 'core/domain/model/Pokemon'
 import { Icon } from 'ui/components/Icon'
 import { Text } from 'ui/components/Text'
 
 interface Props {
-  pokemon: FullPokemon
+  pokemon: FullPokemon,
+  style: StyleProp<ViewStyle>
 }
 
-export const PokemonSummary = ({ pokemon }: Props) => {
+export const PokemonSummary = ({ pokemon,style }: Props) => {
   const navigation = useNavigation()
 
   return (
-    <View style={[styles.container, { backgroundColor: POKEMON_TYPE_COLORS[pokemon.types[0]] }]}>
+    <View style={[style, { backgroundColor: POKEMON_TYPE_COLORS[pokemon.types[0]] }]}>
       <Icon name="less" color="white" onPress={navigation.goBack} />
       <Text capitalize bold fontSize={27} color="white">
         {pokemon.name}
@@ -25,21 +26,18 @@ export const PokemonSummary = ({ pokemon }: Props) => {
           </View>
         ))}
       </View>
-      <Image style={styles.image} source={{ uri: pokemon.picture }} />
+        <Image style={styles.image} source={{ uri: pokemon.picture }} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 15
-  },
   image: {
-    marginBottom: 15,
-    alignSelf: 'center',
-    maxWidth: 400,
-    maxHeight: 400,
-    ...(Platform.OS === 'web' ? { width: '80vw', height: '80vw' } : { width: '80%', aspectRatio: 1 })
+    maxHeight: 500,
+    flex:1,
+    aspectRatio:1,
+    alignSelf: Platform.OS === 'web' ? undefined : 'center',
+    resizeMode: 'contain'
   },
   typesContainer: {
     marginTop: 10,

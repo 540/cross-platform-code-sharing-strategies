@@ -6,6 +6,7 @@ import { FullPokemon } from 'core/domain/model/Pokemon'
 import { PokemonService } from 'core/services/PokemonService'
 import { PokemonSummary } from './_components/PokemonSummary'
 import { PokemonInfo } from './_components/PokemonInfo'
+import {DetailDisplay} from './_components/DetailDisplay';
 
 type RouteProps = RouteProp<StackParams, 'PokemonDetail'>
 export const PokemonDetail = () => {
@@ -25,17 +26,14 @@ export const PokemonDetail = () => {
 
   return (
     <SafeAreaView>
-      <View style={[styles.container]}>
-        <PokemonSummary pokemon={pokemon} />
-        <PokemonInfo pokemon={pokemon} />
-      </View>
+      <DetailDisplay>
+        <PokemonSummary style={styles.block} pokemon={pokemon} />
+        <PokemonInfo style={styles.block} pokemon={pokemon} />
+      </DetailDisplay>
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    height: Platform.OS === 'web' ? '100vh' : '100%'
-  }
+  block: { flex:1,padding: 15}
 })
