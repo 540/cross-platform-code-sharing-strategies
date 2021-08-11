@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native'
+import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 import { PokemonService } from 'core/services/PokemonService'
 import { Pokemon } from 'core/domain/model/Pokemon'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { StackParams } from 'App'
 import { PokemonCard } from './PokemonCard'
+import { Text } from 'ui/components/Text'
 
 type NavigationProps = StackNavigationProp<StackParams, 'PokemonList'>
 
@@ -23,7 +24,9 @@ export const PokemonList = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Pokedex</Text>
+      <Text bold fontSize={30} style={styles.title}>
+        Pokedex
+      </Text>
       <ScrollView contentContainerStyle={styles.scrollView}>
         {pokemons.map(pokemon => (
           <PokemonCard
@@ -39,9 +42,7 @@ export const PokemonList = () => {
 }
 const styles = StyleSheet.create({
   title: {
-    marginHorizontal: 10,
-    fontWeight: 'bold',
-    fontSize: 30
+    marginHorizontal: 10
   },
   container: {
     margin: 10,

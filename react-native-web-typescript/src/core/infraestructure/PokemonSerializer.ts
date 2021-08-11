@@ -4,7 +4,14 @@ export const PokemonSerializer = {
   parseFullPokemon: (pokemon: FullPokemonDto): FullPokemon => {
     const picture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
 
-    return { id: pokemon.id, picture, name: pokemon.name, height: pokemon.height, weight: pokemon.weight }
+    return {
+      id: pokemon.id,
+      picture,
+      name: pokemon.name,
+      height: pokemon.height,
+      weight: pokemon.weight,
+      types: pokemon.types.map(type => type.type.name)
+    }
   },
   parsePokemonList: (pokemonList: PokemonDto[]): Pokemon[] =>
     pokemonList.map(({ name, url }) => {

@@ -1,9 +1,10 @@
 import React from 'react'
-import {Image, StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native'
+import { Image, StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
 import { Pokemon } from 'core/domain/model/Pokemon'
 import { Pressable } from 'react-native-web-hover'
+import { Text } from 'ui/components/Text'
 
-interface Props{
+interface Props {
   pokemon: Pokemon
   onPress: () => void
   style: StyleProp<ViewStyle>
@@ -15,7 +16,7 @@ export const PokemonCard = ({ pokemon, onPress, style }: Props) => (
     style={({ hovered }) => [styles.container, style, hovered && { transform: [{ scale: 1.1 }] }]}>
     <View style={styles.flexContainer}>
       <Image style={styles.image} source={{ uri: pokemon.picture }} />
-      <Text>{`${pokemon.id} - ${pokemon.name}`}</Text>
+      <Text capitalize>{`${pokemon.id} - ${pokemon.name}`}</Text>
     </View>
   </Pressable>
 )
@@ -26,7 +27,8 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 100,
-    width: 100
+    width: 100,
+    marginBottom: 10
   },
   flexContainer: {
     padding: 10,
