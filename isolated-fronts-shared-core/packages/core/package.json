@@ -1,0 +1,6 @@
+{
+  "name": "@540/core",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts"
+}

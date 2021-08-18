@@ -1,0 +1,13 @@
+{
+  "name": "isolated-fronts-shared-core",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "web:start": "yarn workspace web start"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
