@@ -53,6 +53,8 @@
     "eslint-plugin-testing-library": "^4.10.1",
     "eslint-plugin-jest": "^24.4.0",
     "@types/jest": "^26.0.20",
+    "@types/styled-components": "^5.1.14",
+    "@types/styled-components-react-native": "^5.1.1",
     "react-test-renderer": "^17.0.2"
   },
   "browserslist": {

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, Platform, SafeAreaView, StyleSheet, View } from 'react-native'
+import { ActivityIndicator, SafeAreaView, StyleSheet } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 import { StackParams } from 'App'
 import { FullPokemon } from 'core/domain/model/Pokemon'
 import { PokemonService } from 'core/services/PokemonService'
 import { PokemonSummary } from './_components/PokemonSummary'
 import { PokemonInfo } from './_components/PokemonInfo'
-import {DetailDisplay} from './_components/DetailDisplay';
+import { DetailDisplay } from './_components/DetailDisplay'
 
 type RouteProps = RouteProp<StackParams, 'PokemonDetail'>
 export const PokemonDetail = () => {
@@ -35,5 +35,5 @@ export const PokemonDetail = () => {
 }
 
 const styles = StyleSheet.create({
-  block: { flex:1,padding: 15}
+  block: { flex: 1, padding: 15 }
 })
