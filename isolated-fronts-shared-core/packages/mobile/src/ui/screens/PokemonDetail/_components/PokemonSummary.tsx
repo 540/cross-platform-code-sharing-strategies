@@ -1,20 +1,21 @@
-import React from 'react'
-import { Image, Platform, StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { FullPokemon } from '@540/core/domain/model/Pokemon'
-import { Icon } from 'ui/components/Icon'
-import { Text } from 'ui/components/Text'
+import React from 'react';
+import {Image, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {FullPokemon} from '@540/core/domain/model/Pokemon';
+import {Icon} from 'ui/components/Icon';
+import {Text} from 'ui/components/Text';
 
 interface Props {
-  pokemon: FullPokemon
-  style: StyleProp<ViewStyle>
+  pokemon: FullPokemon;
+  style: StyleProp<ViewStyle>;
 }
 
-export const PokemonSummary = ({ pokemon, style }: Props) => {
-  const navigation = useNavigation()
+export const PokemonSummary = ({pokemon, style}: Props) => {
+  const navigation = useNavigation();
 
   return (
-    <View style={[style, { backgroundColor: POKEMON_TYPE_COLORS[pokemon.types[0]] }]}>
+    <View
+      style={[style, {backgroundColor: POKEMON_TYPE_COLORS[pokemon.types[0]]}]}>
       <Icon name="less" color="white" onPress={navigation.goBack} />
       <Text capitalize bold fontSize={27} color="white">
         {pokemon.name}
@@ -26,31 +27,29 @@ export const PokemonSummary = ({ pokemon, style }: Props) => {
           </View>
         ))}
       </View>
-      <Image style={styles.image} source={{ uri: pokemon.picture }} />
+      <Image style={styles.image} source={{uri: pokemon.picture}} />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   image: {
-    maxHeight: 500,
-    flex: 1,
+    height: '70%',
     aspectRatio: 1,
-    alignSelf: Platform.OS === 'web' ? undefined : 'center',
-    resizeMode: 'contain'
+    alignSelf: 'center',
   },
   typesContainer: {
     marginTop: 10,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   type: {
     borderRadius: 20,
     backgroundColor: 'rgba(52, 52, 52, 0.2)',
     marginRight: 5,
     paddingVertical: 7,
-    paddingHorizontal: 15
-  }
-})
+    paddingHorizontal: 15,
+  },
+});
 
 const POKEMON_TYPE_COLORS: Record<string, string> = {
   normal: '#A8A878',
@@ -70,5 +69,5 @@ const POKEMON_TYPE_COLORS: Record<string, string> = {
   ice: '#98D8D8',
   dragon: '#7038F8',
   dark: '#705848',
-  fairy: '#EE99AC'
-}
+  fairy: '#EE99AC',
+};
