@@ -1,16 +1,14 @@
 import React from 'react'
-import { StyleProp, View, ViewStyle } from 'react-native'
-import { FullPokemon } from 'core/domain/model/Pokemon'
-import { Text } from 'ui/components/Text'
+import {FullPokemon} from 'core/domain/model/Pokemon'
+import {Text, View} from 'ui/components'
 
 interface Props {
-  pokemon: FullPokemon
-  style: StyleProp<ViewStyle>
+    pokemon: FullPokemon
 }
 
-export const PokemonInfo = ({ pokemon, style }: Props) => (
-  <View style={style}>
-    <Text>Height: {pokemon.height}</Text>
-    <Text>Weight: {pokemon.weight}</Text>
-  </View>
+export const PokemonInfo = ({pokemon}: Props) => (
+    <View flex={1} padding={15}>
+        <Text>Height: {pokemon.height}</Text>
+        <Text>Weight: {pokemon.weight}</Text>
+    </View>
 )

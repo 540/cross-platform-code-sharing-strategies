@@ -1,40 +1,21 @@
 import React from 'react'
-import {Image, Pressable, StyleProp, StyleSheet, View, ViewStyle} from 'react-native'
-import { Pokemon } from 'core/domain/model/Pokemon'
-
-import { Text } from 'ui/components/Text'
+import {Pokemon} from 'core/domain/model/Pokemon'
+import {Image, Pressable, Text, View} from 'ui/components'
 
 interface Props {
-  pokemon: Pokemon
-  onPress: () => void
-  style: StyleProp<ViewStyle>
+    pokemon: Pokemon
+    onPress: () => void
 }
 
-export const PokemonCard = ({ pokemon, onPress, style }: Props) => (
-  <Pressable
-    onPress={onPress}
-    style={[styles.container, style]}>
-    <View style={styles.flexContainer}>
-      <Image style={styles.image} source={{ uri: pokemon.picture }} />
-      <Text capitalize>{`${pokemon.id} - ${pokemon.name}`}</Text>
+export const PokemonCard = ({pokemon, onPress}: Props) => (
+    <View padding={5} width={175} flexGrow={1}>
+        <Pressable onPress={onPress}>
+            <View padding={10} backgroundColor='lightgrey' borderRadius={30} flex={1} alignItems='center'>
+                <View marginBottom={10}>
+                    <Image width={100} height={100} sourceUri={pokemon.picture}/>
+                </View>
+                <Text capitalize>{`${pokemon.id} - ${pokemon.name}`}</Text>
+            </View>
+        </Pressable>
     </View>
-  </Pressable>
 )
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 5
-  },
-  image: {
-    height: 100,
-    width: 100,
-    marginBottom: 10
-  },
-  flexContainer: {
-    padding: 10,
-    backgroundColor: 'lightgrey',
-    borderRadius: 30,
-    flex: 1,
-    alignItems: 'center'
-  }
-})
