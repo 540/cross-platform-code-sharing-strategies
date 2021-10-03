@@ -45,4 +45,11 @@ export const GlyphMap = {
   play: 8722
 }
 
+
+export interface IconProps {
+  name: IconName
+  color?: string
+  onPress?: () => void
+}
+
 export type IconName = keyof typeof GlyphMap

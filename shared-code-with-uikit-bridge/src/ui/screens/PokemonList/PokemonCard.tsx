@@ -10,7 +10,7 @@ interface Props {
 export const PokemonCard = ({pokemon, onPress}: Props) => (
     <View padding={5} width={175} flexGrow={1}>
         <Pressable onPress={onPress}>
-            <View padding={10} backgroundColor='lightgrey' borderRadius={30} flex={1} alignItems='center'>
+            <View padding={10} backgroundColor='lightgrey' borderRadius={30} flex={1} centerItems>
                 <View marginBottom={10}>
                     <Image width={100} height={100} sourceUri={pokemon.picture}/>
                 </View>

@@ -16,7 +16,7 @@ export const PokemonSummary = ({pokemon}: Props) => {
             <Text capitalize bold fontSize={27} color="white">
                 {pokemon.name}
             </Text>
-            <View marginTop={10} flexDirection='row'>
+            <View marginTop={10} direction='row'>
                 {pokemon.types.map((type) => (
                     <View borderRadius={20} backgroundColor='rgba(52, 52, 52, 0.2)' marginRight={5} paddingVertical={7}
                           paddingHorizontal={15}>
@@ -24,7 +24,7 @@ export const PokemonSummary = ({pokemon}: Props) => {
                     </View>
                 ))}
             </View>
-            <View height='100%' alignSelf='center'>
+            <View height='100%' center>
                 <Image aspectRatio={1} height='70%' sourceUri={pokemon.picture}/>
             </View>
         </View>

@@ -1,24 +1,15 @@
-import React from 'react'
-import { Pressable, StyleSheet, Text } from 'react-native'
-import { GlyphMap, IconName } from './Icon.definition'
+import React from 'react';
+import styled from 'styled-components'
+import {GlyphMap, IconProps} from './Icon.definition';
 
-interface Props {
-  name: IconName
-  color?: string
-  onPress?: () => void
-}
-
-export const Icon = ({ name, color = 'black', onPress }: Props) => (
-  <Pressable onPress={() => onPress?.()} disabled={!onPress} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-    <Text allowFontScaling={false} adjustsFontSizeToFit={false} style={[styles.icon, { color }]}>
-      {String.fromCharCode(GlyphMap[name])}
-    </Text>
-  </Pressable>
+const BaseIcon = ({className, name, onPress }: IconProps & { className?: string }) => (
+    <i className={className} onClick={onPress}>
+        {String.fromCharCode(GlyphMap[name])}
+    </i>
 )
 
-const styles = StyleSheet.create({
-  icon: {
-    fontSize: 25,
-    fontFamily: 'FontAwesome'
-  }
-})
+export const Icon = styled(BaseIcon)`${props => `
+    font-family: FontAwesome;
+    font-size: 25px;
+    color: ${props.color};
+`}`
