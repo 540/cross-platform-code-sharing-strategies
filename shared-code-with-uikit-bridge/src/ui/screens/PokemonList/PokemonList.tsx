@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
 import {PokemonService} from 'core/services/PokemonService';
 import {Pokemon} from 'core/domain/model/Pokemon';
-import {StackParams} from 'App';
 import {PokemonCard} from './PokemonCard';
 import {Loading, SafeAreaView, ScrollView, Text, View} from 'ui/components';
+import {useNavigator} from 'ui/router';
 
-type NavigationProps = StackNavigationProp<StackParams, 'PokemonList'>;
 
 export const PokemonList = () => {
-    const {navigate} = useNavigation<NavigationProps>();
+    const navigator = useNavigator()
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
     useEffect(() => {
@@ -32,7 +29,7 @@ export const PokemonList = () => {
                     <PokemonCard
                         key={pokemon.id}
                         pokemon={pokemon}
-                        onPress={() => navigate('PokemonDetail', {pokemonId: pokemon.id})}
+                        onPress={() => navigator.goToPokemonDetail(pokemon.id)}
                     />
                 ))}
             </ScrollView>

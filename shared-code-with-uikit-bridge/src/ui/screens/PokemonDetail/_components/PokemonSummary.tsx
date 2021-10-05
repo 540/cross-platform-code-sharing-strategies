@@ -1,24 +1,24 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {FullPokemon} from 'core/domain/model/Pokemon';
 import {Icon, Image, Text, View} from 'ui/components';
+import {useNavigator} from 'ui/router';
 
 interface Props {
     pokemon: FullPokemon;
 }
 
 export const PokemonSummary = ({pokemon}: Props) => {
-    const navigation = useNavigation();
+    const navigator = useNavigator()
 
     return (
         <View flex={1} padding={15} backgroundColor={POKEMON_TYPE_COLORS[pokemon.types[0]]}>
-            <Icon name="less" color="white" onPress={navigation.goBack}/>
+            <Icon name="less" color="white" onPress={navigator.goBack}/>
             <Text capitalize bold fontSize={27} color="white">
                 {pokemon.name}
             </Text>
             <View marginTop={10} direction='row'>
                 {pokemon.types.map((type) => (
-                    <View borderRadius={20} backgroundColor='rgba(52, 52, 52, 0.2)' marginRight={5} paddingVertical={7}
+                    <View key={type} borderRadius={20} backgroundColor='rgba(52, 52, 52, 0.2)' marginRight={5} paddingVertical={7}
                           paddingHorizontal={15}>
                         <Text color="white">{type}</Text>
                     </View>

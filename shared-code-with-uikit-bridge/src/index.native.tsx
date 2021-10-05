@@ -1,4 +1,4 @@
 import {AppRegistry} from 'react-native';
-import {App} from './App';
+import {Router} from 'ui/router';
 
-AppRegistry.registerComponent('Pokedex', () => App);
+AppRegistry.registerComponent('Pokedex', () => Router);
