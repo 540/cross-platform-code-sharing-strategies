@@ -3,7 +3,7 @@ import {FullPokemon} from 'core/domain/model/Pokemon';
 import {PokemonService} from 'core/services/PokemonService';
 import {PokemonSummary} from './_components/PokemonSummary';
 import {PokemonInfo} from './_components/PokemonInfo';
-import {Loading, SafeAreaView, View} from 'ui/components';
+import {Loading, View} from 'ui/components';
 import {useParams} from 'ui/router';
 
 export const PokemonDetail = () => {
@@ -20,11 +20,9 @@ export const PokemonDetail = () => {
     }
 
     return (
-        <SafeAreaView>
-            <View height='100%' backgroundColor='white'>
-                <PokemonSummary pokemon={pokemon}/>
-                <PokemonInfo pokemon={pokemon}/>
-            </View>
-        </SafeAreaView>
+        <View height='100%' backgroundColor='white'>
+            <PokemonSummary pokemon={pokemon}/>
+            <PokemonInfo pokemon={pokemon}/>
+        </View>
     );
 };

@@ -1,6 +1,5 @@
-import React, {ReactElement} from 'react';
+import {ReactNode} from 'react';
 
 export interface ContainerProps {
-    children: React.ReactElement | ReactElement[]
-    testID?: string
+    children: ReactNode
 }

@@ -18,8 +18,7 @@ export const PokemonSummary = ({pokemon}: Props) => {
             </Text>
             <View marginTop={10} direction='row'>
                 {pokemon.types.map((type) => (
-                    <View key={type} borderRadius={20} backgroundColor='rgba(52, 52, 52, 0.2)' marginRight={5} paddingVertical={7}
-                          paddingHorizontal={15}>
+                    <View key={type} borderRadius={20} backgroundColor='rgba(52, 52, 52, 0.2)' marginRight={5} paddingVertical={7} paddingHorizontal={15}>
                         <Text color="white">{type}</Text>
                     </View>
                 ))}

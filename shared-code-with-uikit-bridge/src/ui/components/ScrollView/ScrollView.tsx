@@ -11,4 +11,8 @@ const BaseScrollView = ({className, children}: ScrollViewProps & { className?: s
 
 export const ScrollView = styled(BaseScrollView)`
     overflow: scroll;
+    display: flex;
+    flex:1;
+    flex-wrap: wrap;
+    justify-content: space-around;
 `

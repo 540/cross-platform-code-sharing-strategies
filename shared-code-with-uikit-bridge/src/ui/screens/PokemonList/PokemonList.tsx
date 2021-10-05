@@ -2,9 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {PokemonService} from 'core/services/PokemonService';
 import {Pokemon} from 'core/domain/model/Pokemon';
 import {PokemonCard} from './PokemonCard';
-import {Loading, SafeAreaView, ScrollView, Text, View} from 'ui/components';
+import {Loading, ScrollView, Text, View} from 'ui/components';
 import {useNavigator} from 'ui/router';
-
 
 export const PokemonList = () => {
     const navigator = useNavigator()
@@ -19,11 +18,12 @@ export const PokemonList = () => {
     }
 
     return (
-        <SafeAreaView>
-            <View margin={10}>
-            <Text bold fontSize={30}>
-                Pokedex
-            </Text>
+        <View marginHorizontal={10} hideOverflow>
+            <View marginVertical={10}>
+                <Text bold fontSize={30}>
+                    Pokedex
+                </Text>
+            </View>
             <ScrollView>
                 {pokemons.map(pokemon => (
                     <PokemonCard
@@ -33,7 +33,6 @@ export const PokemonList = () => {
                     />
                 ))}
             </ScrollView>
-            </View>
-        </SafeAreaView>
+        </View>
     );
 };

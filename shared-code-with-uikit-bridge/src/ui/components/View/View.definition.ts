@@ -5,12 +5,19 @@ export interface ViewProps {
     width?: number | string
     height?:number | string
     margin?: number
+    marginHorizontal?: number
+    marginVertical?: number
     marginTop?: number
-    marginRight?: number
     marginBottom?: number
+    marginRight?: number
+    marginLeft?: number
     padding?: number
     paddingHorizontal?: number
     paddingVertical?: number
+    paddingTop?: number
+    paddingBottom?: number
+    paddingRight?: number
+    paddingLeft?: number
     flexGrow?: number
     backgroundColor?: string
     borderRadius?: number
@@ -18,4 +25,5 @@ export interface ViewProps {
     direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
     centerItems?: boolean
     center?: boolean
+    hideOverflow?: boolean
 }

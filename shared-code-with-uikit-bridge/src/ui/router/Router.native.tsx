@@ -9,8 +9,12 @@ export const Router = () => (
     <NavigationContainer>
         <Stack.Navigator>
             {routes.map(route =>
-                <Stack.Screen key={route.name} name={route.name} component={route.component}
-                              options={{headerShown: false}}/>
+                <Stack.Screen
+                    key={route.name}
+                    name={route.name}
+                    component={route.component}
+                    options={{headerShown: false, cardStyle: {backgroundColor: 'white'}}}
+                />
             )}
         </Stack.Navigator>
     </NavigationContainer>

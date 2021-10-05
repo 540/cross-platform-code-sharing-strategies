@@ -1,6 +1,5 @@
 export {Text} from './Text'
 export {Container} from './Container'
-export {SafeAreaView} from './SafeAreaView'
 export {ScrollView} from './ScrollView'
 export {Icon} from './Icon'
 export {Image} from './Image'
