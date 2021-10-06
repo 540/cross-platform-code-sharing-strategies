@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+import { render } from '__test__/testing'
 
 import { PokemonList } from '../PokemonList'
 import {PokemonService} from 'core/services/PokemonService';
