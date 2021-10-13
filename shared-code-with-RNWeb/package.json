@@ -5,10 +5,10 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "mobile": "react-native start",
     "web": "react-scripts start",
-    "build": "react-scripts build",
     "test": "jest",
+    "build": "react-scripts build",
     "lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --fix",
     "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; cd ios; pod install --repo-update; cd ..; npx jetify; cd android; ./gradlew clean; cd ..; react-native start --reset-cache",
     "postinstall": "patch-package"
@@ -35,7 +35,6 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/react": "^17.0.2",
     "@types/react-native": "^0.63.50",
-    "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "babel-plugin-module-resolver": "^4.0.0",

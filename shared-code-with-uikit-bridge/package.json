@@ -5,12 +5,12 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "mobile": "react-native start",
+    "web": "react-scripts start",
     "test": "yarn test:web && yarn test:mobile",
     "test:web": "jest -c jest.config.web.js ",
     "test:mobile": "jest -c jest.config.native.js ",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "web": "react-scripts start",
     "build": "react-scripts build",
     "postinstall": "patch-package"
   },

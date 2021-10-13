@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "web:start": "yarn workspace web start"
+    "install": "yarn --cwd packages/web install && yarn --cwd packages/mobile install",
+    "web": "yarn --cwd packages/web start",
+    "mobile": "yarn --cwd packages/mobile start",
+    "ios": "yarn --cwd packages/mobile ios",
+    "android": "yarn --cwd packages/mobile android",
+    "test": "echo TEST NOT CONFIGURED"
   }
 }
