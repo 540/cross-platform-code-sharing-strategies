@@ -5,12 +5,12 @@ const absolutePath = path.join(__dirname, '../core');
 
 const core = path.join(
   __dirname,
-  '../node_modules/@540/core',
+  './node_modules/@540/core',
 );
 
 module.exports = {
   webpack: {
-    configure: (webpackConfig, { env, paths }) => {
+    configure: (webpackConfig) => {
       const { isFound, match } = getLoader(
         webpackConfig,
         loaderByName('babel-loader'),
