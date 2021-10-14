@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-target 'Pokedex' do
+target 'SharedCore' do
   config = use_native_modules!
 
   use_react_native!(
@@ -12,7 +12,7 @@ target 'Pokedex' do
     :hermes_enabled => false
   )
 
-  target 'PokedexTests' do
+  target 'SharedCoreTests' do
     inherit! :complete
     # Pods for testing
   end

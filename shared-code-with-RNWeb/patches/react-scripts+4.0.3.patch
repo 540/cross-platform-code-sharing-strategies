@@ -1,0 +1,46 @@
+diff --git a/node_modules/react-scripts/config/webpack.config.js b/node_modules/react-scripts/config/webpack.config.js
+index 26c2a65..621d7d8 100644
+--- a/node_modules/react-scripts/config/webpack.config.js
++++ b/node_modules/react-scripts/config/webpack.config.js
+@@ -756,6 +756,8 @@ module.exports = function (webpackEnv) {
+       !disableESLintPlugin &&
+         new ESLintPlugin({
+           // Plugin options
++          failOnError: false,
++          emitWarning: true,
+           extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+           formatter: require.resolve('react-dev-utils/eslintFormatter'),
+           eslintPath: require.resolve('eslint'),
+diff --git a/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js b/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
+index 949f34a..d533f3c 100644
+--- a/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
++++ b/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
+@@ -145,17 +145,17 @@ function verifyTypeScriptSetup() {
+     resolveJsonModule: { value: true, reason: 'to match webpack loader' },
+     isolatedModules: { value: true, reason: 'implementation limitation' },
+     noEmit: { value: true },
+-    jsx: {
+-      parsedValue:
+-        hasJsxRuntime && semver.gte(ts.version, '4.1.0-beta')
+-          ? ts.JsxEmit.ReactJSX
+-          : ts.JsxEmit.React,
+-      value:
+-        hasJsxRuntime && semver.gte(ts.version, '4.1.0-beta')
+-          ? 'react-jsx'
+-          : 'react',
+-      reason: 'to support the new JSX transform in React 17',
+-    },
++    // jsx: {
++    //   parsedValue:
++    //     hasJsxRuntime && semver.gte(ts.version, '4.1.0-beta')
++    //       ? ts.JsxEmit.ReactJSX
++    //       : ts.JsxEmit.React,
++    //   value:
++    //     hasJsxRuntime && semver.gte(ts.version, '4.1.0-beta')
++    //       ? 'react-jsx'
++    //       : 'react',
++    //   reason: 'to support the new JSX transform in React 17',
++    // },
+     paths: { value: undefined, reason: 'aliased imports are not supported' },
+   };
+ 
