@@ -23,3 +23,13 @@ For each project example:
 - `yarn android`: installs & runs app on android
 - `yarn ios`: installs & runs app on iOS
 - `yarn test`: runs tests
+
+
+## Shared code with RNWeb
+<img width="600" alt="Screenshot 2021-10-14 at 10 26 44" src="https://user-images.githubusercontent.com/25979923/137280253-6ca6dfcd-cc28-4292-97e5-1bf48b193f66.png">
+
+## Shared code with UIKit
+<img width="600" alt="Screenshot 2021-10-14 at 10 26 52" src="https://user-images.githubusercontent.com/25979923/137280263-1a86efd6-4387-4c34-8133-8058eb001f1d.png">
+
+## Isolated fronts with shared core
+<img width="600" alt="Screenshot 2021-10-14 at 10 27 01" src="https://user-images.githubusercontent.com/25979923/137280266-adc7acbf-31c6-4986-8055-65d32b5ec0d8.png">
