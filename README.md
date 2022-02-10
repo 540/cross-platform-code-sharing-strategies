@@ -25,11 +25,19 @@ For each project example:
 - `yarn test`: runs tests
 
 
-## Shared code with RNWeb
-<img width="600" alt="Screenshot 2021-10-14 at 10 26 44" src="https://user-images.githubusercontent.com/25979923/137280253-6ca6dfcd-cc28-4292-97e5-1bf48b193f66.png">
+## Lógica y visualización comparttda
 
-## Shared code with UIKit
+### [Shared code with RNWeb](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/shared-code-with-uikit-bridge)
+[React Native Web](https://necolas.github.io/react-native-web/) es un framework que te permite utilizar el api y los componentes de RN para construir aplicaciones web. Hace de puente, permitiendo compilar un mismo código RN en apps para iOS, android y web.
+
+  <img width="600" alt="Screenshot 2021-10-14 at 10 26 44" src="https://user-images.githubusercontent.com/25979923/137280253-6ca6dfcd-cc28-4292-97e5-1bf48b193f66.png">
+
+### [Shared code wiith UIKit bridge](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/shared-code-with-uikit-bridge)
+Otra posibilidad es definir un UIkit custom que haga de puente e implementarlo para cada plataforma.
 <img width="600" alt="Screenshot 2021-10-14 at 10 26 52" src="https://user-images.githubusercontent.com/25979923/137280263-1a86efd6-4387-4c34-8133-8058eb001f1d.png">
 
-## Isolated fronts with shared core
+## Lógica compartida, diferente visualización
+
+### [Isolated fronts shared core](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/isolated-fronts-shared-core)
+
 <img width="600" alt="Screenshot 2021-10-14 at 10 27 01" src="https://user-images.githubusercontent.com/25979923/137280266-adc7acbf-31c6-4986-8055-65d32b5ec0d8.png">
