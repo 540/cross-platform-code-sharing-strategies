@@ -25,19 +25,22 @@ For each project example:
 - `yarn test`: runs tests
 
 
-## Lógica y visualización comparttda
+## Shared logic and view
 
 ### [Shared code with RNWeb](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/shared-code-with-uikit-bridge)
-[React Native Web](https://necolas.github.io/react-native-web/) es un framework que te permite utilizar el api y los componentes de RN para construir aplicaciones web. Hace de puente, permitiendo compilar un mismo código RN en apps para iOS, android y web.
+[React Native Web](https://necolas.github.io/react-native-web/) is a compatibility layer between React DOM and React Native. It allows you to build ios, android and web apps from React Native api and components.
 
-  <img width="600" alt="Screenshot 2021-10-14 at 10 26 44" src="https://user-images.githubusercontent.com/25979923/137280253-6ca6dfcd-cc28-4292-97e5-1bf48b193f66.png">
+<img width="550" alt="Screenshot 2022-03-07 at 08 14 05" src="https://user-images.githubusercontent.com/25979923/156986747-8d43b0d1-db25-4838-be09-52987fc714d9.png">
 
 ### [Shared code wiith UIKit bridge](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/shared-code-with-uikit-bridge)
-Otra posibilidad es definir un UIkit custom que haga de puente e implementarlo para cada plataforma.
-<img width="600" alt="Screenshot 2021-10-14 at 10 26 52" src="https://user-images.githubusercontent.com/25979923/137280263-1a86efd6-4387-4c34-8133-8058eb001f1d.png">
+Another option is to define a custom UIkit that works as a bridge and create an implementation for each platform.
 
-## Lógica compartida, diferente visualización
+
+<img width="550" alt="Screenshot 2022-03-07 at 08 14 57" src="https://user-images.githubusercontent.com/25979923/156986829-d0a795b9-68e0-4f1e-b37b-83a6c79f2805.png">
+
+## Shared logic, different view
 
 ### [Isolated fronts shared core](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/isolated-fronts-shared-core)
+In this example, we shared the core written in JS and each platform implements his own view.  
 
-<img width="600" alt="Screenshot 2021-10-14 at 10 27 01" src="https://user-images.githubusercontent.com/25979923/137280266-adc7acbf-31c6-4986-8055-65d32b5ec0d8.png">
+<img width="550" alt="Screenshot 2022-03-07 at 08 16 33" src="https://user-images.githubusercontent.com/25979923/156987051-afde38bd-fa06-49e3-9d62-12093551e008.png">
