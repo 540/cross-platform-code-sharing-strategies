@@ -43,4 +43,5 @@ Another option is to define a custom UIkit that works as a bridge and create an 
 ### [Isolated fronts shared core](https://github.com/540/cross-platform-code-sharing-strategies/tree/master/isolated-fronts-shared-core)
 In this example, we shared the core written in JS and each platform implements his own view.  
 
-<img width="550" alt="Screenshot 2022-03-07 at 08 16 33" src="https://user-images.githubusercontent.com/25979923/156987051-afde38bd-fa06-49e3-9d62-12093551e008.png">
+<img width="550" alt="Screenshot 2022-03-07 at 08 31 47" src="https://user-images.githubusercontent.com/25979923/156987223-dc6b6861-409d-42a9-a0d2-cb8a41675379.png">
+
